@@ -33,9 +33,19 @@ class Program {
 
         //Growing simulation
         int growTime = int.Parse(plantLifespan); //seconds
-        for (int i = 1; i <= growTime; i++) {
-            Console.WriteLine($"Your plant is growing to... {i} cm tall!");
-            Thread.Sleep(1000);
+        if (growTime > 0)
+        {
+            for (int i = 1; i <= growTime; i++)
+            {
+                Console.WriteLine($"Your plant is growing to... {i} cm tall!");
+                Thread.Sleep(1000);
+                if(i == 100)
+                {
+                    Console.WriteLine("Okay lets speed this up, we don't have all day to keep running!");
+                    break;
+                }
+                
+            }
         }
 
         //if plantLifespan < 20, say it perished away as a seedling
@@ -46,8 +56,28 @@ class Program {
         }
         else if (growTime <= 40)
         {
-            Console.WriteLine("");
+            Console.WriteLine("             |▓▓▓▓▓        \r\n              | ▓▓▓        \r\n           ▓▓|    ▓        \r\n        ▓▓▓▓▓|             \r\n       ▓▓▓   |             \r\n             ||            \r\n              ▓▓▓          \r\n              |▓▓▓▓        \r\n▓▓▓▓▓▓       ||  ▓▓        \r\n   ▓▓        |            ▓\r\n             |         ▓▓▓▓\r\n            ░░░       ▓▓▓▓ \r\n        ░░░░░ ░░░░░ ░░░    \r\n   ░ ░░░              ░░░  ");
             Console.WriteLine($"\n\nWhat a short life you doomed {plantName} to! Only survived till it became a small sucker... Try again!");
+        }
+        else if (growTime <=100)
+        {
+            Console.WriteLine("                   ██  ██  \r\n                 █████████ \r\n                ██████████ \r\n     ███████    ███████████\r\n    █████████    ███████   \r\n     ███████   ▓▓ ██ ██    \r\n       ███ ▓▓▓▓     ██     \r\n    █████    ▓    ██████   \r\n   █████████  ▓▓ ████████  \r\n   ██████████   ▓█████████ \r\n ███████████▓  ▓  █ █████  \r\n█████████ █  ▓▓            \r\n ███ █         ▓           \r\n               ▓           \r\n              ░▓░          \r\n          ░░░░░ ░░░░░ ░░░  \r\n     ░ ░ ░              ░░░");
+            Console.WriteLine($"\n\nA short but noble life... you tried your best {plantName}!");
+        }
+        else if(growTime <=500)
+        {
+            Console.WriteLine("  :::::                    █           █    ██                        \r\n :     :                █████ █ █ █ █████  ████  █             █  █   \r\n:       :             ██████████████████  █████ ███           ██████  \r\n :     :             ████████████|█████    ████  ██ ████      ██ ██   \r\n  :::::               ██  ██████  ██████  ███████████████ █  ██████   \r\n                        █  ██████ ██████████████ ███████████  █  █    \r\n                   █ █ ███ ██ ███  ██ ██ ███████ ███████  █           \r\n              ███ ███████████████ █     | █████████████               \r\n             ███████████████████████     |██████████ █                \r\n             █████████████|██ █████    |█ ███ ███████                 \r\n              █ █   ███    ███ █████  |██████  ██ ██                  \r\n                            █ ||███  | ██████                         \r\n                                ||   |  █  █          .......         \r\n                                  || |            ....       ......   \r\n                                    ||         ...                 ...\r\n                                     |                                \r\n                  ......             |                                \r\n          ........      ....         |                                \r\n      ....                  ..       |                                \r\n                                    ░|░                               \r\n                                ░░░░░ ÷÷÷÷÷÷░░░                       \r\n                           ░ ░ ░÷  ÷÷÷÷÷    ÷ ÷÷░                     \r\n                     ÷  ÷  ÷÷÷  ÷÷÷÷÷÷÷÷ ÷ ÷÷     ÷÷÷÷÷               \r\n                             ÷                                        ");
+            Console.WriteLine($"\n\n Wow-ee!! What a fun life! {plantName} managed to live long enough to mature. I wonder what would happen if it lived a bit longer? Say 200ish more days... give or take ;)");
+        }
+        else if(growTime <=700)
+        {
+            Console.WriteLine("  :::::                    █           █    ██                        \r\n :     :                █████ █ █ █ █████  oo██  █             █  █   \r\n:       :             ██ooo██o██o█o█████  ██o██ ███           ██████  \r\n :     :             █oo████o████|o████    ████o oo o███o o   ██o██   \r\n  :::::               ██  ███o██  ██████  ████oo██o█o█oo█ █  o█████   \r\n                 o   o  █  ██████ ████████o██o█oo███o█o█████  █o █    \r\n                   █ o ███ █o ██oo ██ ██ ███oo██ █oo████oo█           \r\n              ███ o█o████o███████ █     | ██oooo█oo████               \r\n             o██o████ooo████o███████     |████oo████o█                \r\n             ██o██oo█████o|██ █████    |█ ███ o██████                 \r\n              █ █   ███    ███ █████  |██████  ██ ██                  \r\n                            █ ||███  | ██████                         \r\n                                ||   |  █  █    o     .......         \r\n                                  || |            ....       ......   \r\n                                    ||     o   ...                 ...\r\n                                     |                                \r\n                  ......             |     O     o                    \r\n          ........      ..o.         |    /|\\                         \r\n      ....              o   ..       |     |                          \r\n                           ooo  o   ░|░   | |    o                    \r\n                        o oooo oo░░░░ ÷÷÷÷÷÷░░░ oooooo                \r\n                      o o o░ o ░÷  ÷÷÷÷÷    ÷ ooooo oo                \r\n                     ÷  ÷  ÷÷÷  ÷÷÷÷÷÷÷÷ ÷ ÷÷     o÷÷÷÷               \r\n                             ÷                                        ");
+            Console.WriteLine($"Wow! {plantName} lived long enough to drop an apple onto Sir Isaac Newton's Head! Now everyone will stop floating! Thank goodness {plantName} made some delicious fruit!");
+        }
+        else
+        {
+            Console.WriteLine("  :::::                    █           █    ██                        \r\n :     :                █████ █ █ █ █████  ████  █             █  █   \r\n:       :             ██████████████████  █████ ███           ██████  \r\n :     :             ████████████|█████    ████  ██ ████      ██ ██   \r\n  :::::               ██  ██████  ██████  ███████████████ █  ██████   \r\n                        █  ██████ ██████████████ ███████████  █  █    \r\n                   █ █ ███ ██ ███  ██ ██ ███████ ███████  █           \r\n              ███ ███████████████ █     | █████████████               \r\n             ███████████████████████     |██████████ █                \r\n             █████████████|██ █████    |█ ███ ███████                 \r\n              █ █   ███    ███ █████  |██████  ██ ██                  \r\n                            █ ||███  | ██████                         \r\n                                ||   |  █  █          .......         \r\n                                  || |            ....       ......   \r\n                                    ||         ...                 ...\r\n                                     |                                \r\n                  ......             |                                \r\n          ........      ....         |                                \r\n      ....                  ..       |                                \r\n                                    ░|░                               \r\n                                ░░░░░ ÷÷÷÷÷÷░░░                       \r\n                           ░ ░ ░÷  ÷÷÷÷÷    ÷ ÷÷░                     \r\n                     ÷  ÷  ÷÷÷  ÷÷÷÷÷÷÷÷ ÷ ÷÷     ÷÷÷÷÷               \r\n                             ÷                                        ");
+            Console.WriteLine($"OH MY GOSH! {plantName} has had a fab life! They had so much fun; made friends, flowered and fruited once or twice maybe more, dropped leaves in autumn\n- congrats!~~~");
         }
 
         //add input for how long the plant simulation is to last.
