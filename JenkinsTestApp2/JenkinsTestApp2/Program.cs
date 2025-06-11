@@ -38,6 +38,18 @@ class Program {
             Thread.Sleep(1000);
         }
 
+        //if plantLifespan < 20, say it perished away as a seedling
+        if(growTime <= 20)
+        {
+            Console.WriteLine("                                                   ▓▒▒▒░▒▒▒▒▓           \r\n                                       ▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒░░░▒░░▒▓▓▓       \r\n                                     ▓▓▓         ▓▓▒▒▓▒▒▒▒▒▒░░░░▓▓      \r\n                                    ▓▓            ▓▓   ▓▓▓▓▒▒▒░░░░▒     \r\n                                   ▓▓              ▓         ▓▓░░░░▒    \r\n                                   ▓                            ▒▒░     \r\n                                 ░ ▓                                    \r\n                           ░░░█░░░████▓ ▓ ▓▓                            \r\n                      ▓▓▓░░▓░░░▓▓░▓▓█▓▓▓▓▓▓▓▓▓                          \r\n                ▓░░▓ ▓▓░░░▓▓▓▓▓▓░▓▓▓░▒▓▓▒▓▓▓▓▓▓▓ ▒                      \r\n            ░▒░░░▓░░░▓░░▓░░░░▓▒▓▒▓░░░░░▒▒▒▓▓▓▓▓▓▓▓█████▓                \r\n    ▒▒▒░░░░░▓▓░░▒░░░▒▓▓▓░░▒▒░▒▒▒▒▒▒░▓▓▓▒▓▒▓▒▓▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓ ▒         \r\n   ░▒░░░░▒▒▒▒▒▒ ░░░░▓▓░▒▒▒▒░ ░▒▒ ░▒   ░▒▓▒▒▓▓▓▓▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓ ▒▒▒▒▒▒ \r\n ░░░▒░░▒▒░▒▓░▒░▓▓▒▒▒▒▒▒░▒▒░▒░░░░ ░▒░░░░░▒░ ▒░░░▒▒▒ ▒▒▒ ▒▒▒▒▓▒▒▒▒▒▒▒▒▒▒▒▒\r\n▒▒▒▒░░░▒░▒░░░░░▒▒▒▒▒░▒▒▒░░░░▒ ░░░▒░░  ░░▒▒▒▒▒ ▒▒▒   ▒   ▒▒▒▒▒▒▒▒ ▒ ▒▒▒▒ \r\n   ▒▒░ ░  ░░░░░░ ▒▒▒░▒▒░  ▒▒      ▒     ▒  ▒   ▒         ▒ ▒            ");
+            Console.WriteLine($"\n\nPoor {plantName} did not live long enough to become a big plant... Try again!");
+        }
+        else if (growTime <= 40)
+        {
+            Console.WriteLine("");
+            Console.WriteLine($"\n\nWhat a short life you doomed {plantName} to! Only survived till it became a small sucker... Try again!");
+        }
+
         //add input for how long the plant simulation is to last.
     }
 }
